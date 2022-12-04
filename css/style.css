@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+}
+ul {
+  display: flex;
+}
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  justify-content: space-around;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+
+  color: #ffffff;
+}
+.first {
+  padding-top: 28px;
+  background-image: url(../img/фон\ на\ 1\ экране.png);
+  height: 933px;
+  background-size: cover;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+.menu {
+  width: 50%;
+}
+.menu_ul {
+  justify-content: space-around;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  flex-wrap: wrap;
+
+  color: #ffffff;
+}
+.menu_ul_li {
+  transition: 0.4s;
+  cursor: pointer;
+}
+.menu_ul_li:hover {
+  transform: scale(1.2);
+}
+.nav_tel {
+  margin-top: 15px;
+  cursor: pointer;
+}
+p {
+  margin: 7px;
+  padding: 0;
+  width: 25px;
+  border: 1px solid white;
+  transition: 0.3s;
+}
+.burger {
+  display: none;
+}
+.burger:hover p:nth-child(1) {
+  transform: translate(-3px, 1px) scale(1) rotate(45deg);
+  transform-origin: top;
+}
+.burger:hover p:nth-child(2) {
+  transform: translate(0px, 0px) scale(1) rotate(-45deg);
+  transform-origin: left;
+}
+.burger:hover p:nth-child(3) {
+  transform: scale(0);
+}
+.man {
+  left: -65px;
+  position: relative;
+  order: 0;
+}
+.man_man {
+  top: 90px;
+  position: absolute;
+  left: -33px;
+  width: 692px;
+  height: 675px;
+  order: 3;
+  border-radius: 50%;
+  background-color: rgb(163, 165, 165, 0.3);
+  background-position: bottom;
+}
+.first_man {
+  display: flex;
+  position: relative;
+}
+.barbar {
+  order: 1;
+  position: relative;
+}
+@media (max-width: 915px) {
+  .menu:hover .menu_ul {
+    opacity: 1;
+    display: block;
+    transition: 0.4s;
+    position: absolute;
+    left: 232px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 140px;
+    border-radius: 10%;
+
+    line-height: 41px;
+  }
+
+  .menu {
+    width: 35px;
+  }
+  .burger {
+    display: block;
+  }
+  .menu_ul {
+    display: none;
+  }
+  .nav_tel {
+    display: none;
+  }
+}
+@media (max-width: 560px) {
+  .container {
+    width: 100%;
+  }
+  .menu {
+    margin-right: 15px;
+  }
+}
