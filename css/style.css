@@ -23,11 +23,11 @@ a {
 .first {
   padding-top: 28px;
   background-image: url(../img/фон\ на\ 1\ экране.png);
-  height: 933px;
+  /* height: 933px; */
   background-size: cover;
 }
 .container {
-  width: 80%;
+  padding: 0 5%;
   margin: 0 auto;
 }
 .nav {
@@ -36,6 +36,26 @@ a {
 }
 .menu {
   width: 50%;
+}
+@keyframes my-animation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.barbar-img {
+  position: relative;
+  animation: my-animation 3s infinite;
+}
+
+.menu.element-show {
+  opacity: 1;
+  transition: opacity 1s;
 }
 .menu_ul {
   justify-content: space-around;
@@ -58,62 +78,128 @@ a {
   margin-top: 15px;
   cursor: pointer;
 }
-p {
-  margin: 7px;
-  padding: 0;
-  width: 25px;
-  border: 1px solid white;
-  transition: 0.3s;
-}
+
 .burger {
   display: none;
 }
+.burger-line {
+  border: 1px solid white;
+  margin: 5px;
+}
 .burger:hover p:nth-child(1) {
-  transform: translate(-3px, 1px) scale(1) rotate(45deg);
+  transform: translate(0px, 14px) scale(1) rotate(45deg);
   transform-origin: top;
 }
 .burger:hover p:nth-child(2) {
-  transform: translate(0px, 0px) scale(1) rotate(-45deg);
+  transform: scale(0);
   transform-origin: left;
 }
 .burger:hover p:nth-child(3) {
-  transform: scale(0);
+  transform: translate(0px, 0px) scale(1) rotate(-45deg);
 }
 .man {
   left: -65px;
   position: relative;
-  order: 0;
+
+  z-index: 100;
 }
 .man_man {
-  top: 90px;
+  z-index: 10;
+  top: 166px;
   position: absolute;
-  left: -33px;
+  left: 27px;
   width: 692px;
   height: 675px;
+
   order: 3;
   border-radius: 50%;
-  background-color: rgb(163, 165, 165, 0.3);
+  background-color: rgb(163, 165, 165, 0.1);
+
+  filter: blur(5px);
+  backdrop-filter: blur(2px);
   background-position: bottom;
 }
 .first_man {
   display: flex;
-  position: relative;
+  overflow: hidden;
+  padding-bottom: 60px;
 }
 .barbar {
-  order: 1;
+  align-self: center;
   position: relative;
+  left: -241px;
+  top: 95px;
+  z-index: 0;
+  text-align: center;
 }
+
+.barbar-p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-align: center;
+}
+.barbar-but {
+  padding: 16px 40px;
+  background: #fec123;
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  border: 0;
+  cursor: pointer;
+}
+.barbar-but:hover {
+  color: aliceblue;
+}
+
+@media (max-width: 1515px) {
+  .barbar {
+    left: -193px;
+  }
+}
+@media (max-width: 1318px) {
+  .barbar {
+    left: -123px;
+  }
+}
+@media (max-width: 1200px) {
+  .barbar {
+    left: -77px;
+  }
+}
+@media (max-width: 1010px) {
+  .first_man {
+    flex-wrap: wrap;
+  }
+  .barbar {
+    left: 0px;
+  }
+}
+
 @media (max-width: 915px) {
   .menu:hover .menu_ul {
+    height: 70vh;
+    align-content: center;
+
+    z-index: 1000;
     opacity: 1;
     display: block;
     transition: 0.4s;
     position: absolute;
-    left: 232px;
+    left: 0px;
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.1);
-    width: 140px;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
     border-radius: 10%;
 
     line-height: 41px;
@@ -132,11 +218,37 @@ p {
     display: none;
   }
 }
+
+@media (max-width: 912px) {
+  .first_man {
+    flex-direction: column;
+  }
+  .barbar {
+    position: unset;
+  }
+}
+.barbar-img {
+  width: 100%;
+}
 @media (max-width: 560px) {
   .container {
     width: 100%;
   }
   .menu {
     margin-right: 15px;
+  }
+}
+@media (max-width: 540px) {
+  .man {
+    left: -128px;
+  }
+  .man_man {
+    display: none;
+  }
+  .first_man {
+    flex-direction: row;
+  }
+  .man-img {
+    width: 150%;
   }
 }
