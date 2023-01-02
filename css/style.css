@@ -252,3 +252,8 @@ a {
     width: 150%;
   }
 }
+@media (max-width: 360px) {
+  .man {
+    left: -62px;
+  }
+}
