@@ -240,7 +240,7 @@ a {
 }
 @media (max-width: 540px) {
   .man {
-    left: -128px;
+    left: -105px;
   }
   .man_man {
     display: none;
